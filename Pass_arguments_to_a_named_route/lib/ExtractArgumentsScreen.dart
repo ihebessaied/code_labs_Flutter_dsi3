@@ -12,23 +12,6 @@ class ExtractArgumentsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Extract the arguments from the current ModalRoute
-    ElevatedButton(
-      onPressed: () {
-        // When the user taps the button,
-        // navigate to a named route and
-        // provide the arguments as an optional
-        // parameter.
-        Navigator.pushNamed(
-          context,
-          ExtractArgumentsScreen.routeName,
-          arguments: ScreenArguments(
-            'Extract Arguments Screen',
-            'This message is extracted in the build method.',
-          ),
-        );
-      },
-      child: const Text('Navigate to screen that extracts arguments'),
-    );
     // settings and cast them as ScreenArguments.
     final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
 
