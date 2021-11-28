@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'DetailScreen.dart';
 import 'Todo.dart';
 
 class TodosScreen extends StatelessWidget {
@@ -21,6 +22,14 @@ class TodosScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           return ListTile(
             title: Text(todos[index].title),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailScreen(todo: todos[index]),
+                ),
+              );
+            },
           );
         },
       ),
